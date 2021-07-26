@@ -1,0 +1,20 @@
+local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+
+-- Install packer on first load
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+  vim.fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
+  vim.api.nvim_command 'packadd packer.nvim'
+end
+
+return require('packer').startup(function()
+    -- Packer can manage itself as an optional plugin
+    use 'wbthomason/packer.nvim'
+
+    -- Theme
+    use 'tomasiser/vim-code-dark'
+
+    -- Language server config
+    use 'neovim/nvim-lspconfig' -- Sensible defaults for LSP not included with neovim
+    use 'jose-elias-alvarez/null-ls.nvim' -- Somehow neovim becomes an LSP
+    use 'tamago324/nlsp-settings.nvim' -- JSON support
+end)
