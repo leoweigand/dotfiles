@@ -17,4 +17,10 @@ return require('packer').startup(function()
     use 'neovim/nvim-lspconfig' -- Sensible defaults for LSP not included with neovim
     use 'jose-elias-alvarez/null-ls.nvim' -- Somehow neovim becomes an LSP
     use 'tamago324/nlsp-settings.nvim' -- JSON support
+
+    -- Telescope
+    use {
+     'nvim-telescope/telescope.nvim',
+      requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+    }
 end)

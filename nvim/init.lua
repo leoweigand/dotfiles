@@ -5,6 +5,7 @@ TERMINAL = vim.fn.expand "$TERMINAL"
 USER = vim.fn.expand "$USER"
 
 require "settings"
+require "keymappings"
 require "plugins"
 
 -- Set color cheme

@@ -15,7 +15,7 @@ local settings = {
   smartcase = true, -- case-sensitive searches for terms with >1 uppercase character
   splitbelow = true, -- force all horizontal splits to go below current window
   splitright = true, -- force all vertical splits to go to the right of current window
-  timeoutlen = 100, -- time to wait for a mapped sequence to complete (in milliseconds)
+  timeoutlen = 400, -- time to wait for a mapped sequence to complete (in milliseconds)
   -- File Handling
   swapfile = false, -- disable swap file creation
   fileencoding = "utf-8", -- the encoding written to a file
