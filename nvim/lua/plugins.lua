@@ -18,6 +18,16 @@ return require('packer').startup(function()
     use 'jose-elias-alvarez/null-ls.nvim' -- Somehow neovim becomes an LSP
     use 'tamago324/nlsp-settings.nvim' -- JSON support
 
+    -- Whichkey
+    use {
+      "folke/which-key.nvim",
+      config = function()
+        require("which-key").setup {
+          -- which-key config (doesn’t include mappings)
+        }
+      end
+    }
+
     -- Telescope
     use {
      'nvim-telescope/telescope.nvim',

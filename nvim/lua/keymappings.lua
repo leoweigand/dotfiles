@@ -1,10 +1,12 @@
 local utils = require 'utils'
+local which_key = require 'which-key'
+local telescope = require 'telescope.builtin'
 
 -- Set leader to space key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-local mappings = {
+utils.registerMappings({
   insert_mode = {
     ['jk'] = '<Esc>'
   },
@@ -16,14 +18,23 @@ local mappings = {
     -- navigate windows with arrow keys
     ['<left>'] = '<C-w>h',
     ['<right>'] = '<C-w>l',
-
-    -- convert these to use <leader> and vim-whichkey
-    ['<leader>s'] = ':w<CR>',
-    ['<leader>q'] = ':q<CR>',
-    ['<leader>p'] = '<cmd>Telescope find_files<CR>',
-    ['<leader>f'] = '<cmd>Telescope live_grep<CR>',
   }
-}
+})
 
-utils.registerMappings(mappings)
-
+which_key.register({
+  ['<leader>'] = {
+    s = { ':w<cr>', 'Save file' },
+    q = { 
+      name = 'Quit',
+      q = { ':q<cr>', 'Close file' },
+      s = { ':x<cr>', 'Save and close' },
+      a = { ':qa<cr>', 'Close all files' },
+    },
+    -- Telescope bindings
+    f = {
+      name = 'Search',
+      p = { function() telescope.find_files(require('telescope.themes').get_dropdown({})) end, 'Find files by name' },
+      f = { function () telescope.live_grep() end, 'Search project' }
+    }
+  }
+})
