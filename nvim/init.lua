@@ -7,6 +7,7 @@ USER = vim.fn.expand "$USER"
 require "settings"
 require "keymappings"
 require "plugins"
+require "statusline"
 
 -- Set color cheme
 vim.cmd('colorscheme codedark')

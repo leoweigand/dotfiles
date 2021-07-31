@@ -12,6 +12,13 @@ return require('packer').startup(function()
 
     -- Theme
     use 'tomasiser/vim-code-dark'
+    -- Galaxy line
+    use {
+      'glepnir/galaxyline.nvim',
+      branch = 'main',
+      -- some optional icons
+      requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    }
 
     -- Language server config
     use 'neovim/nvim-lspconfig' -- Sensible defaults for LSP not included with neovim
