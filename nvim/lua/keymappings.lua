@@ -31,9 +31,9 @@ which_key.register({
       a = { ':qa<cr>', 'Close all files' },
     },
     -- Telescope bindings
+    p = { function() telescope.find_files(require('telescope.themes').get_dropdown({previewer=false})) end, 'Find files by name' },
     f = {
       name = 'Search',
-      p = { function() telescope.find_files(require('telescope.themes').get_dropdown({})) end, 'Find files by name' },
       f = { function () telescope.live_grep() end, 'Search project' }
     }
   }
