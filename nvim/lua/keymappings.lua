@@ -35,6 +35,11 @@ which_key.register({
     f = {
       name = 'Search',
       f = { function () telescope.live_grep() end, 'Search project' }
-    }
+    },
+    c = { '<cmd>CommentToggle<cr>', 'Toggle line comment' },
   }
 })
+
+which_key.register({
+  ["/"] = { ":CommentToggle<cr>", "Toggle line comment" },
+}, { mode = 'v' })

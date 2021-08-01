@@ -20,6 +20,14 @@ return require('packer').startup(function()
       requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
 
+    use {
+      "terrortylor/nvim-comment",
+      -- event = "BufRead",
+      config = function()
+        require('nvim_comment').setup({})
+      end
+    }
+
     -- Language server config
     use 'neovim/nvim-lspconfig' -- Sensible defaults for LSP not included with neovim
     use 'jose-elias-alvarez/null-ls.nvim' -- Somehow neovim becomes an LSP
