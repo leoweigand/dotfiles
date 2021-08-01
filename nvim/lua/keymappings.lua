@@ -18,6 +18,7 @@ utils.registerMappings({
     -- navigate windows with arrow keys
     ['<left>'] = '<C-w>h',
     ['<right>'] = '<C-w>l',
+    ['?'] = '<cmd>WhichKey<cr>',
   }
 })
 
