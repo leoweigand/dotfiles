@@ -23,6 +23,7 @@ utils.registerMappings({
 
 which_key.register({
   ['<leader>'] = {
+    e = { '<cmd>NvimTreeToggle<CR>', 'Explorer' },
     s = { ':w<cr>', 'Save file' },
     q = { 
       name = 'Quit',

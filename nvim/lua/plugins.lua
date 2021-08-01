@@ -20,6 +20,10 @@ return require('packer').startup(function()
       -- some optional icons
       requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
+    -- File tree
+    use { "kyazdani42/nvim-tree.lua" }
+    -- Auto-switch to project root dir
+    use "airblade/vim-rooter"
 
     use {
       "terrortylor/nvim-comment",
