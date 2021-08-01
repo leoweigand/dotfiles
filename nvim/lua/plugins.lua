@@ -11,7 +11,8 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     -- Theme
-    use 'tomasiser/vim-code-dark'
+    use { 'tomasiser/vim-code-dark', opt = true }
+    use 'folke/tokyonight.nvim'
     -- Galaxy line
     use {
       'glepnir/galaxyline.nvim',
