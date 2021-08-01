@@ -1,66 +1,33 @@
--- https://github.com/bartoszmaka/dotfiles/blob/master/vim/lua/plugins/galaxyline.lua
-
-local vim = vim
-local galaxyline = require('galaxyline')
-
-local section = galaxyline.section
-
-local onedark = {
-        black = '#0c0e15',
-          bg0 = '#1a212e',
-          bg1 = '#21283b',
-          bg2 = '#283347',
-          bg3 = '#2a324a',
-         bg_d = '#141b24',
-      bg_blue = '#54b0fd',
-    bg_yellow = '#f2cc81',
-           fg = '#93a4c3',
-       purple = '#c75ae8',
-        green = '#8bcd5b',
-       orange = '#dd9046',
-         blue = '#41a7fc',
-       yellow = '#efbd5d',
-         cyan = '#34bfd0',
-          red = '#f65866',
-         grey = '#455574',
-    dark_cyan = '#1b6a73',
-     dark_red = '#992525',
-  dark_yellow = '#8f610d',
-  dark_purple = '#862aa1',
-    diff_add  = '#27341c',
-  diff_delete = '#331c1e',
-  diff_change = '#102b40',
-    diff_text = '#1c4a6e'
-}
+local gl = require('galaxyline')
+local gls = gl.section
+gl.short_line_list = {'LuaTree','packager'}
 
 local colors = {
-  bg = onedark.bg0,
-  bg_inactive = onedark.bg3,
-  fg = onedark.fg,
-  fg_focus = '#f8f8f2',
-  section_bg = onedark.bg0,
-  yellow = onedark.bg_yellow,
-  cyan = onedark.cyan,
-  green = onedark.green,
-  orange = onedark.orange,
-  magenta = onedark.purple,
-  blue = onedark.blue,
-  red = onedark.red,
-  black = onedark.black,
-}
+  bg = '#2e3440',
+  fg = '#81a1c1',
+  line_bg = '#2e3440',
+  fg_green = '#6d96a5',
 
-local buffer_not_empty = function()
-  return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
-end
+  yellow = '#fabd2f',
+  cyan = '#008080',
+  darkblue = '#081633',
+  green = '#608B4E',
+  orange = '#FF8800',
+  purple = '#5d4d7a',
+  magenta = '#d16d9e',
+  grey = '#c0c0c0',
+  blue = '#569CD6',
+  red = '#D16969'
+}
 
 local mode_color = function()
   local mode_colors = {
-    n = colors.green,
-    i = colors.blue,
+    n = colors.cyan,
+    i = colors.green,
     c = colors.orange,
-    V = colors.magenta,
-    [''] = colors.magenta,
-    v = colors.magenta,
+    V = colors.purple,
+    [''] = colors.purple,
+    v = colors.purple,
     R = colors.red,
   }
 
@@ -73,7 +40,20 @@ local mode_color = function()
   return color
 end
 
-section.left[1] = {
+local buffer_not_empty = function()
+  if vim.fn.empty(vim.fn.expand('%:t')) ~= 1 then
+    return true
+  end
+  return false
+end
+
+gls.left[1] = {
+  FirstElement = {
+    provider = function() return '▋' end,
+    highlight = { colors.cyan, colors.bg }
+  },
+}
+gls.left[2] = {
   ViMode = {
     provider = function()
       local alias = {
@@ -85,90 +65,146 @@ section.left[1] = {
         v = 'VISUAL',
         R = 'REPLACE',
       }
-      vim.api.nvim_command('hi GalaxyViMode gui=bold guibg='..mode_color())
+      vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color())
       local alias_mode = alias[vim.fn.mode()]
       if alias_mode == nil then
         alias_mode = vim.fn.mode()
       end
-      return '  '..alias_mode..' '
+      return alias_mode..' '
     end,
-    separator = ' ',
-    highlight = { colors.bg, colors.section_bg },
-    separator_highlight = {colors.bg, colors.section_bg },
+    highlight = { colors.bg, colors.bg },
+    separator = "  ",
+    separator_highlight = {colors.bg, colors.line_bg},
   },
 }
-
-section.left[2] = {
+gls.left[3] ={
   FileIcon = {
     provider = 'FileIcon',
     condition = buffer_not_empty,
-    highlight = { require('galaxyline.provider_fileinfo').get_file_icon_color, colors.section_bg },
+    highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.line_bg},
   },
 }
-
-section.left[3] = {
+gls.left[4] = {
   FileName = {
-    provider = function ()
-      return vim.fn.expand('%f')
-    end,
-    condition = buffer_not_empty,
-    highlight = { colors.fg, colors.section_bg },
-    separator_highlight = {colors.fg, colors.section_bg },
-  }
-}
-
-section.right[1]= {
-  LineColumn = {
-    provider = function ()
-      vim.api.nvim_command('hi GalaxyLineColumn guibg='..mode_color())
-      local max_lines = vim.fn.line('$')
-      local line = vim.fn.line('.')
-      local column = vim.fn.col('.')
-      return string.format(" %3d/%d:%d ", line, max_lines, column)
-    end,
-    separator = ' ',
-    highlight = { colors.black, mode_color() },
-    separator_highlight = { colors.black, colors.section_bg },
-  }
-}
-
-section.short_line_left[1] = {
-  SpacerInactive = {
-    provider = function()
-      return '  '
-    end,
-    highlight = { colors.fg, colors.bg_inactive },
-    separator_highlight = {colors.fg, colors.bg_inactive },
-  }
-}
-
-section.short_line_left[2] = {
-  FileIconInactive = {
-    provider = 'FileIcon',
+    provider = 'FileName',
     condition = buffer_not_empty,
     separator = ' ',
-    highlight = { colors.fg, colors.bg_inactive },
-    separator_highlight = { require('galaxyline.provider_fileinfo').get_file_icon_color,  colors.bg_inactive },
-  }
-}
-section.short_line_left[3] = {
-  FileNameInactive = {
-    provider = function ()
-      return vim.fn.expand('%f')
-    end,
-    separator = ' ',
-    highlight = { colors.fg, colors.bg_inactive },
-    separator_highlight = { colors.fg, colors.bg_inactive },
+    separator_highlight = {colors.purple,colors.bg},
+    highlight = {colors.fg,colors.line_bg,'bold'}
   }
 }
 
-section.short_line_right[1] = {
-  LineColumnInactive = {
+
+gls.right[1] = {
+  GitIcon = {
+    provider = function() return ' ' end,
+    condition = require('galaxyline.provider_vcs').check_git_workspace,
+    highlight = {colors.fg,colors.line_bg},
+  }
+}
+gls.right[2] = {
+  GitBranch = {
+    provider = 'GitBranch',
+    condition = require('galaxyline.provider_vcs').check_git_workspace,
+    separator = '',
+    separator_highlight = {colors.purple,colors.bg},
+    highlight = {colors.fg,colors.line_bg,'bold'},
+  }
+}
+local checkwidth = function()
+  local squeeze_width  = vim.fn.winwidth(0) / 2
+  if squeeze_width > 40 then
+    return true
+  end
+  return false
+end
+
+gls.right[3] = {
+  DiffAdd = {
+    provider = 'DiffAdd',
+    condition = checkwidth,
+    icon = ' ',
+    highlight = {colors.green,colors.line_bg},
+  }
+}
+gls.right[4] = {
+  DiffModified = {
+    provider = 'DiffModified',
+    condition = checkwidth,
+    icon = '柳',
+    highlight = {colors.orange,colors.line_bg},
+  }
+}
+gls.right[5] = {
+  DiffRemove = {
+    provider = 'DiffRemove',
+    condition = checkwidth,
+    icon = ' ',
+    highlight = {colors.red,colors.line_bg},
+  }
+}
+
+gls.right[6] = {
+  LineInfo = {
     provider = 'LineColumn',
+    separator = '',
+    separator_highlight = {colors.blue,colors.line_bg},
+    highlight = {colors.fg,colors.line_bg},
+  },
+}
+gls.right[7] = {
+  FileSize = {
+    provider = 'FileSize',
     separator = ' ',
-    highlight = { colors.fg, colors.bg_inactive },
-    separator_highlight = { colors.fg, colors.bg_inactive },
+    condition = buffer_not_empty,
+    separator_highlight = {colors.blue,colors.line_bg},
+    highlight = {colors.fg,colors.line_bg}
   }
 }
 
-galaxyline.load_galaxyline()
+gls.left[10] = {
+  LeftEnd = {
+    provider = function() return ' ' end,
+    separator = ' ',
+    separator_highlight = {colors.bg,colors.line_bg},
+    highlight = {colors.line_bg,colors.line_bg}
+  }
+}
+gls.right[11] = {
+  DiagnosticError = {
+    provider = 'DiagnosticError',
+    icon = '  ',
+    highlight = {colors.red,colors.bg}
+  }
+}
+gls.right[12] = {
+  Space = {
+    provider = function () return ' ' end
+  }
+}
+gls.right[13] = {
+  DiagnosticWarn = {
+    provider = 'DiagnosticWarn',
+    icon = '  ',
+    highlight = {colors.blue,colors.bg},
+  }
+}
+
+
+gls.short_line_left[15] = {
+  BufferType = {
+    provider = 'FileTypeName',
+    separator = ' ',
+    separator_highlight = {colors.purple,colors.bg},
+    highlight = {colors.fg,colors.purple}
+  }
+}
+gls.short_line_right[16] = {
+  BufferIcon = {
+    provider= 'BufferIcon',
+    separator = ' ',
+    separator_highlight = {colors.purple,colors.bg},
+    highlight = {colors.fg,colors.purple}
+  }
+}
+
