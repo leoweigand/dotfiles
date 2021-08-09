@@ -39,7 +39,14 @@ which_key.register({
       f = { function () telescope.live_grep() end, 'Search project' }
     },
     c = { '<cmd>CommentToggle<cr>', 'Toggle line comment' },
-  }
+  },
+  t = {
+   j = { '<cmd>tabnext<cr>', 'Next tab' },
+   k = { '<cmd>tabprevious<cr>', 'Previous tab' },
+   n = { ':tabnew ', 'New tab' },
+   nn = { ':tabnew<cr>', 'New tab' },
+   c = { ':tabclose<cr> ', 'Close tab' },
+  },
 })
 
 which_key.register({
