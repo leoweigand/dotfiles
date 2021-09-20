@@ -26,7 +26,7 @@ which_key.register({
   ['<leader>'] = {
     e = { '<cmd>NvimTreeToggle<CR>', 'Explorer' },
     s = { ':w<cr>', 'Save file' },
-    q = { 
+    q = {
       name = 'Quit',
       q = { ':q<cr>', 'Close file' },
       s = { ':x<cr>', 'Save and close' },
@@ -36,14 +36,16 @@ which_key.register({
     p = { function() telescope.find_files(require('telescope.themes').get_dropdown({previewer=false})) end, 'Find files by name' },
     f = {
       name = 'Search',
-      f = { function () telescope.live_grep() end, 'Search project' }
+      f = { function () telescope.live_grep() end, 'Search project' },
+      R = { ':%s//g<left><left>', 'Replace all', silent = false },
+      h = { '<cmd>noh<cr>', 'Clear search highlight' }
     },
     c = { '<cmd>CommentToggle<cr>', 'Toggle line comment' },
   },
   t = {
    j = { '<cmd>tabnext<cr>', 'Next tab' },
    k = { '<cmd>tabprevious<cr>', 'Previous tab' },
-   n = { ':tabnew ', 'New tab' },
+   n = { ':tabnew ', 'New tab', silent = false },
    nn = { ':tabnew<cr>', 'New tab' },
    c = { ':tabclose<cr> ', 'Close tab' },
   },
