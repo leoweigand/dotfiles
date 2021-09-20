@@ -5,7 +5,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   vim.api.nvim_command 'packadd packer.nvim'
 end
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
     -- Packer can manage itself as an optional plugin
     use 'wbthomason/packer.nvim'
 
@@ -13,6 +13,8 @@ return require('packer').startup(function()
     use { 'tomasiser/vim-code-dark', opt = true }
     use 'sainnhe/sonokai'
     use 'folke/tokyonight.nvim'
+    -- Simple tabline without magic
+    use { 'alvarosevilla95/luatab.nvim', requires='kyazdani42/nvim-web-devicons' }
     -- Galaxy line
     use {
       'glepnir/galaxyline.nvim',

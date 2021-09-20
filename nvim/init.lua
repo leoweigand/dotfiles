@@ -1,6 +1,6 @@
+require "plugins"
 require "settings"
 require "keymappings"
-require "plugins"
 require "statusline"
 require "lsp"
 

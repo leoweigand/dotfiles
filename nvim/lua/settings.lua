@@ -2,6 +2,7 @@
 local settings = {
   -- Editor Settings
   showtabline = 2, -- always show tabs
+  tabline = '%!v:lua.require\'luatab\'.tabline()', -- use luatab tabline
   showmode = false, -- hide things like -- INSERT --, replaced by status line
   cursorline = true, -- highlight the current line
   number = true, -- set numbered lines
