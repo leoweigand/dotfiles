@@ -20,7 +20,7 @@ local settings = {
   -- File Handling
   swapfile = false, -- disable swap file creation
   fileencoding = "utf-8", -- the encoding written to a file
-  undodir = CACHE_PATH .. "/undo", -- set an undo directory
+  undodir = vim.fn.stdpath('cache') .. "/undo", -- set an undo directory
   undofile = true, -- enable persistent undo
 }
 
