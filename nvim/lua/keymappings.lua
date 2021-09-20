@@ -1,4 +1,3 @@
-local utils = require 'utils'
 local which_key = require 'which-key'
 local telescope = require 'telescope.builtin'
 
@@ -6,21 +5,9 @@ local telescope = require 'telescope.builtin'
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-utils.registerMappings({
-  insert_mode = {
-    ['jk'] = '<Esc>'
-  },
-
-  normal_mode = {
-    -- move lines up and down
-    ['<C-k>'] = ':m .-2<CR>==',
-    ['<C-j>'] = ':m .+1<CR>==',
-    -- navigate windows with arrow keys
-    ['<left>'] = '<C-w>h',
-    ['<right>'] = '<C-w>l',
-    ['?'] = '<cmd>WhichKey<cr>',
-  }
-})
+which_key.register({
+  jk = { '<esc>', 'Exit insert mode without finger acrobatics' }
+}, { mode = 'i' })
 
 which_key.register({
   ['<leader>'] = {
@@ -49,6 +36,13 @@ which_key.register({
    nn = { ':tabnew<cr>', 'New tab' },
    c = { ':tabclose<cr> ', 'Close tab' },
   },
+  -- move lines up and down
+  ['<C-k>'] = { ':m .-2<CR>==', 'Move line up' },
+  ['<C-j>'] = { ':m .+1<CR>==', 'Move line down' },
+  -- navigate windows with arrow keys
+  ['<left>'] = { '<C-w>h', 'Focus window to the left' },
+  ['<right>'] = { '<C-w>l', 'Focus window to the right' },
+  ['?'] = { '<cmd>WhichKey<cr>', 'Open WhichKey' },
 })
 
 which_key.register({

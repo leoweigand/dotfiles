@@ -1,5 +1,6 @@
 local utils = {}
 
+-- probably always better to use which-key for self-documenting
 function utils.registerMappings(mappings)
   local modes = {
     insert_mode = 'i',
