@@ -10,5 +10,5 @@ require "plugins"
 require "statusline"
 
 -- Set color cheme
-vim.g.tokyonight_style = "night"
-vim.cmd('colorscheme tokyonight')
+vim.g.sonokai_style = "andromeda"
+vim.cmd('colorscheme sonokai')

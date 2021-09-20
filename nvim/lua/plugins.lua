@@ -12,6 +12,7 @@ return require('packer').startup(function()
 
     -- Theme
     use { 'tomasiser/vim-code-dark', opt = true }
+    use 'sainnhe/sonokai'
     use 'folke/tokyonight.nvim'
     -- Galaxy line
     use {
