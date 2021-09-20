@@ -36,6 +36,7 @@ return require('packer').startup(function()
 
     -- Language server config
     use 'neovim/nvim-lspconfig' -- Sensible defaults for LSP not included with neovim
+    use 'kabouzeid/nvim-lspinstall'
     use 'jose-elias-alvarez/null-ls.nvim' -- Somehow neovim becomes an LSP
     use 'tamago324/nlsp-settings.nvim' -- JSON support
 
