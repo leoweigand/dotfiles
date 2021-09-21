@@ -12,6 +12,7 @@ brew "wget"
 
 # Fonts
 brew "font-jetbrains-mono-nerd-font"
+brew "font-ia-writer-quattro"
 
 # File handling
 brew "gifsicle"
