@@ -7,6 +7,7 @@ brew "gh"
 # Desktop apps
 cask "kitty"
 cask "raycast"
+cask "obsidian"
 
 # Fonts
 tap "homebrew/cask-fonts"
