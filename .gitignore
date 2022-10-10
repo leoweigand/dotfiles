@@ -2,4 +2,5 @@
 packer_compiled.lua
 Brewfile.lock.json
 .zsh_history
+.zsh_sessions
 .config/nvim/
