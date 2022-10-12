@@ -2,6 +2,7 @@
 brew "neovim"
 brew "lazygit"
 brew "ripgrep"
+brew "bat"
 brew "gh"
 
 # Desktop apps
