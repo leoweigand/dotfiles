@@ -36,5 +36,8 @@ return {
         hide_dotfiles = false,
       },
     },
+    -- ["nvim-treesitter-textsubjects"] = {
+    --   ensure_installed = { "treesitter" }
+    -- }
   },
 }
