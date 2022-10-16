@@ -4,9 +4,11 @@ Brewfile.lock.json
 .zsh_history
 .zsh_sessions
 .config/nvim/
+.config/gh/hosts.yml
 
 # shell-specific generated files
 # fish
 .config/fish/fish_history
 .config/fish/fishd.*
 .config/fish/fish_variables
+
