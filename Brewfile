@@ -7,6 +7,8 @@ brew "ripgrep"
 brew "bat"
 brew "gh"
 
+brew "fnm"
+
 # Desktop apps
 cask "kitty"
 cask "raycast"
