@@ -32,8 +32,13 @@ return {
       },
     },
     ["neo-tree"] = {
-      window = {
-        hide_dotfiles = false,
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+          never_show = {
+            ".git",
+          },
+        },
       },
     },
     -- ["nvim-treesitter-textsubjects"] = {
