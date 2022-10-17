@@ -4,6 +4,7 @@ brew "fish"
 brew "neovim"
 brew "lazygit"
 brew "ripgrep"
+brew "zoxide"
 brew "bat"
 brew "gh"
 
