@@ -41,6 +41,7 @@ return {
         },
       },
     },
+    telescope = require "user.telescope",
     -- ["nvim-treesitter-textsubjects"] = {
     --   ensure_installed = { "treesitter" }
     -- }
