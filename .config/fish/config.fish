@@ -1,7 +1,7 @@
 set fish_greeting # disable fish greeting
 
-# Homebrew
-eval $(/opt/homebrew/bin/brew shellenv)
+# not sure why this has to be set
+set -xg SHELL "$(which fish)"
 
 # Directory jumping
 zoxide init fish | source
