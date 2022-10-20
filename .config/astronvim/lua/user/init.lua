@@ -23,6 +23,8 @@ return {
     init = {
       -- Color scheme
       { "sainnhe/sonokai" },
+      -- Quick jumping
+      { "phaazon/hop.nvim", branch = "v2" },
       { "RRethy/nvim-treesitter-textsubjects" },
     },
     bufferline = {
