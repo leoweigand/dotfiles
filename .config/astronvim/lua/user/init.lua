@@ -14,7 +14,7 @@ return {
   -- set vim options here (vim.<first_key>.<second_key> =  value)
   options = {
     g = {
-      sonokai_style = "shusia", -- select color scheme variant
+      -- sonokai_style = "shusia", -- select color scheme variant
     },
   },
 
