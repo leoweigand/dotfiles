@@ -41,6 +41,18 @@ return {
         },
       },
     },
+    ["null-ls"] = function(config)
+      local null_ls = require "null-ls"
+
+      config.sources = {
+        -- Set a formatter
+        null_ls.builtins.formatting.prettierd,
+        -- Set a linter
+        null_ls.builtins.diagnostics.eslint,
+      }
+
+      return config
+    end,
     telescope = require "user.telescope",
     -- ["nvim-treesitter-textsubjects"] = {
     --   ensure_installed = { "treesitter" }
