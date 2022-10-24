@@ -25,7 +25,6 @@ return {
       { "sainnhe/sonokai" },
       -- Quick jumping
       { "phaazon/hop.nvim", branch = "v2" },
-      { "RRethy/nvim-treesitter-textsubjects" },
     },
     bufferline = {
       options = {
@@ -56,8 +55,5 @@ return {
       return config
     end,
     telescope = require "user.telescope",
-    -- ["nvim-treesitter-textsubjects"] = {
-    --   ensure_installed = { "treesitter" }
-    -- }
   },
 }
