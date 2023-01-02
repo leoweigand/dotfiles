@@ -1,7 +1,5 @@
-set fish_greeting # disable fish greeting
-
-# not sure why this has to be set
-set -xg SHELL "$(which fish)"
+# Disable greeting
+set fish_greeting 
 
 # Directory jumping
 zoxide init fish | source
