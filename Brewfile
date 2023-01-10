@@ -1,5 +1,6 @@
 # Core utilities
 brew "fish"
+brew "starship"
 # CLI tools
 brew "neovim"
 brew "lazygit"
