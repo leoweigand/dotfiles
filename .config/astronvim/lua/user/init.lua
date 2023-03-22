@@ -1,59 +1,43 @@
 return {
-  -- Set colorscheme to use
-  colorscheme = "sonokai",
+	-- Set dashboard header
+	-- header = {
+	--   "██      ███████  ██████  ██    ██ ██ ███    ███",
+	--   "██      ██      ██    ██ ██    ██ ██ ████  ████",
+	--   "██      █████   ██    ██ ██    ██ ██ ██ ████ ██",
+	--   "██      ██      ██    ██  ██  ██  ██ ██  ██  ██",
+	--   "███████ ███████  ██████    ████   ██ ██      ██",
+	-- },
 
-  -- Set dashboard header
-  header = {
-    "██      ███████  ██████  ██    ██ ██ ███    ███",
-    "██      ██      ██    ██ ██    ██ ██ ████  ████",
-    "██      █████   ██    ██ ██    ██ ██ ██ ████ ██",
-    "██      ██      ██    ██  ██  ██  ██ ██  ██  ██",
-    "███████ ███████  ██████    ████   ██ ██      ██",
-  },
+	-- options = {
+	--   g = {
+	--     -- sonokai_style = "shusia", -- select color scheme variant
+	--   },
+	-- },
 
-  -- set vim options here (vim.<first_key>.<second_key> =  value)
-  options = {
-    g = {
-      -- sonokai_style = "shusia", -- select color scheme variant
-    },
-  },
-
-  -- Configure plugins
-  plugins = {
-    init = {
-      -- Color scheme
-      { "sainnhe/sonokai" },
-      -- Quick jumping
-      { "phaazon/hop.nvim", branch = "v2" },
-    },
-    bufferline = {
-      options = {
-        show_close_icon = false,
-        show_buffer_close_icons = false,
-      },
-    },
-    ["neo-tree"] = {
-      filesystem = {
-        filtered_items = {
-          hide_dotfiles = false,
-          never_show = {
-            ".git",
-          },
-        },
-      },
-    },
-    ["null-ls"] = function(config)
-      local null_ls = require "null-ls"
-
-      config.sources = {
-        -- Set a formatter
-        null_ls.builtins.formatting.prettierd,
-        -- Set a linter
-        null_ls.builtins.diagnostics.eslint,
-      }
-
-      return config
-    end,
-    telescope = require "user.telescope",
-  },
+	-- Configure plugins
+	-- plugins = {
+	--   init = {
+	--     -- Color scheme
+	--     -- { "sainnhe/sonokai" },
+	--     -- Quick jumping
+	--     { "phaazon/hop.nvim", branch = "v2" },
+	--   },
+	--   -- @todo migrate now invalid config
+	--   -- bufferline = {
+	--   --   options = {
+	--   --     show_close_icon = false,
+	--   --     show_buffer_close_icons = false,
+	--   --   },
+	--   -- },
+	--   ["neo-tree"] = {
+	--     filesystem = {
+	--       filtered_items = {
+	--         hide_dotfiles = false,
+	--         never_show = {
+	--           ".git",
+	--         },
+	--       },
+	--     },
+	--   },
+	-- },
 }
