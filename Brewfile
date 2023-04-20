@@ -14,6 +14,7 @@ brew "fnm"
 # Desktop apps
 cask "kitty"
 cask "raycast"
+cask "arc"
 cask "obsidian"
 
 # Fonts
