@@ -1,4 +1,5 @@
 return {
+	-- Normal mode bindings
 	n = {
 		["<leader>gy"] = {
 			function()
@@ -15,7 +16,14 @@ return {
 			end,
 			desc = "Open line on remote",
 		},
+		["<leader>lm"] = {
+			function()
+				require("typescript").actions.addMissingImports()
+			end,
+			desc = "Add missing imports"
+		}
 	},
+	-- Visual mode bindings
 	v = {
 		["<leader>gy"] = {
 			function()

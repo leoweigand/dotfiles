@@ -1,6 +1,12 @@
 return {
-
-	-- options = {
+	lsp = {
+		setup_handlers = {
+			-- add custom handler
+			tsserver = function(_, opts)
+				require("typescript").setup({ server = opts })
+			end,
+		},
+	}, -- options = {
 	--   g = {
 	--     -- sonokai_style = "shusia", -- select color scheme variant
 	--   },
