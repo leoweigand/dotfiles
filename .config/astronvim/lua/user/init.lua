@@ -1,9 +1,19 @@
+local utils = require("astronvim.utils")
 return {
 	lsp = {
 		setup_handlers = {
 			-- add custom handler
 			tsserver = function(_, opts)
-				require("typescript").setup({ server = opts })
+				require("typescript").setup({
+					server = utils.extend_tbl(opts, {
+						init_options = {
+							preferences = {
+								importModuleSpecifierPreference = "project-relative",
+								importModuleSpecifierEnding = "minimal",
+							}
+						}
+					})
+				})
 			end,
 		},
 	}, -- options = {
