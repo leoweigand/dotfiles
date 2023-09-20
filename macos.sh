@@ -11,7 +11,7 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Shorter delay for key repeat
 defaults write -g InitialKeyRepeat -int 12
-defaults write -g KeyRepeat -int 3
+defaults write -g KeyRepeat -int 2
 
 # Faster trackpad speed
 defaults write -g com.apple.trackpad.scaling -float 7
