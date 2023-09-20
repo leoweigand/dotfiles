@@ -27,5 +27,7 @@ defaults write com.apple.dock autohide-delay -float 0
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
 
+# Don't show recent apps in Dock
+defaults write com.apple.dock "show-recents" -bool "false" && killall Dock
 
 killall Dock
