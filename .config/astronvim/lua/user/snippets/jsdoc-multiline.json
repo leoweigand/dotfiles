@@ -1,0 +1,11 @@
+{
+  "setup": {
+    "prefix": "jsdoc-block",
+    "description": "Inserts a JSDoc block comment",
+    "body": [
+      "/**",
+      " * ${1:Description}",
+      " */"
+    ]
+  }
+}
