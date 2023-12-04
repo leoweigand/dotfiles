@@ -11,6 +11,13 @@
           "typescriptreact"
         ],
         "path": "./jsdoc.json"
+      },
+      {
+        "language": [
+          "typescript",
+          "typescriptreact"
+        ],
+        "path": "./jsdoc-block.json"
       }
     ]
   }
