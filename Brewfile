@@ -12,7 +12,7 @@ brew "gh"
 brew "volta"
 
 # Desktop apps
-cask "kitty"
+cask "wezterm"
 cask "raycast"
 cask "obsidian"
 
