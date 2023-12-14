@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local action = wezterm.action
 
 local SOLID_RIGHT_ARROW = utf8.char(0xe0b0)
 
@@ -38,9 +39,11 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 
 	local trailing_fg = background
 	local trailing_bg = NORMAL_TAB_BG
+	local left_arrow = { Text = SOLID_RIGHT_ARROW }
 
 	if is_first then
 		leading_fg = TAB_BAR_BG
+		left_arrow.Text = " "
 	else
 		leading_fg = NORMAL_TAB_BG
 	end
@@ -52,15 +55,13 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 	end
 
 	local title = tab.active_pane.title
-	-- broken?
-	-- local title = " " .. wezterm.truncate_to_width(tab.active_pane.title, 30) .. " "
 
 	return {
 		{ Attribute = { Italic = false } },
 		{ Attribute = { Intensity = hover and "Bold" or "Normal" } },
 		{ Background = { Color = leading_bg } },
 		{ Foreground = { Color = leading_fg } },
-		{ Text = SOLID_RIGHT_ARROW },
+		left_arrow,
 		{ Background = { Color = background } },
 		{ Foreground = { Color = foreground } },
 		{ Text = " " .. title .. " " },
@@ -71,14 +72,15 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 end)
 
 return {
+	window_close_confirmation = "NeverPrompt",
 	window_decorations = "RESIZE",
 	hide_tab_bar_if_only_one_tab = true,
 	use_fancy_tab_bar = false,
 	tab_bar_at_bottom = true,
 	tab_max_width = 32,
 	inactive_pane_hsb = {
-		saturation = 0.5,
-		brightness = 0.5,
+		saturation = 0.6,
+		brightness = 0.7,
 	},
 	tab_bar_style = {
 		new_tab = wezterm.format({
@@ -111,7 +113,15 @@ return {
 		}),
 	},
 	font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular" }),
-	font_size = 14.0,
+	font_size = 16.0,
 	bold_brightens_ansi_colors = true,
 	color_scheme = "duskfox",
+	-- Clears the scrollback and viewport leaving the prompt line the new first line.
+	keys = {
+		{
+			key = "k",
+			mods = "SUPER",
+			action = action.ClearScrollback("ScrollbackAndViewport"),
+		},
+	},
 }
