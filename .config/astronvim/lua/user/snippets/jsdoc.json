@@ -1,9 +1,0 @@
-{
-  "setup": {
-    "prefix": "jsdoc",
-    "description": "Inserts a single-line JSDoc comment",
-    "body": [
-      "/** ${1:Description} */"
-    ]
-  }
-}
