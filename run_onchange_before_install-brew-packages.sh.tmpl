@@ -12,20 +12,8 @@ if ! command -v brew &> /dev/null; then
     echo "✅ Homebrew installed"
 fi
 
-# Install common packages from Brewfile
+# Install packages from Brewfile (includes profile-specific packages)
 echo "📋 Installing packages from Brewfile..."
 brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"
-
-# Profile-specific packages
-{{- if eq .profile "work" }}
-echo "💼 Installing work-specific packages..."
-brew install --cask slack
-brew install --cask zoom
-{{- end }}
-
-{{- if eq .profile "personal" }}
-echo "🏠 Installing personal packages..."
-# Add personal-specific packages here if needed
-{{- end }}
 
 echo "✅ Package installation complete"

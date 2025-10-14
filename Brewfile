@@ -23,3 +23,14 @@ cask "font-ia-writer-quattro"
 # Terminal multiplexing
 brew "tmux"
 brew "fzf"
+
+# Work profile packages
+{{- if eq .profile "work" }}
+cask "slack"
+cask "zoom"
+{{- end }}
+
+# Personal profile packages
+{{- if eq .profile "personal" }}
+# Add personal-specific packages here
+{{- end }}
