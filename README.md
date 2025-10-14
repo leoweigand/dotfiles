@@ -39,3 +39,4 @@ MIT
 
 - Set up Caps Lock → Escape mapping with Karabiner-Elements
 - Set up tiling window manager (yabai)
+- Try asdf for managing different runtime versions (Node, Python, etc.) instead of nvm
