@@ -1,5 +1,5 @@
 #!/bin/bash
-# Brewfile hash: {{ include "Brewfile" | sha256sum }}
+# Brewfile hash: {{ include "Brewfile.tmpl" | sha256sum }}
 
 set -eufo pipefail
 
@@ -14,6 +14,6 @@ fi
 
 # Install packages from Brewfile (includes profile-specific packages)
 echo "📋 Installing packages from Brewfile..."
-brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"
+brew bundle --file="{{ .chezmoi.homeDir }}/Brewfile"
 
 echo "✅ Package installation complete"
