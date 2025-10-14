@@ -1,1 +1,10 @@
+# Font
+font-family = JetBrainsMono Nerd Font
+font-size = 16
+
+# Theme
+theme = duskfox
+
+# Keybinds
 keybind = shift+enter=text:\x1b\r
+keybind = super+k=clear_screen
