@@ -1,0 +1,35 @@
+# Ignore sensitive and local-only files
+
+# 1Password
+.config/1Password/**
+.config/op/**
+
+# Claude Code local config
+.claude.json
+.claude.json.backup
+
+# System files
+.DS_Store
+.CFUserTextEncoding
+
+# History files
+.zsh_history
+.python_history
+.lesshst
+
+# Vim
+.viminfo
+
+# Application-specific (managed by apps themselves)
+.config/raycast/**
+.config/simple-update-notifier/**
+.config/zed/**
+.config/tmux/**
+
+# LM Studio
+.lmstudio-home-pointer
+
+# Local tool installations
+.nvm/**
+.pyenv/**
+.local/**
