@@ -4,6 +4,9 @@
 alias vim='nvim'
 alias vi='nvim'
 
+# Tools
+alias cat='bat'
+
 # Git
 alias lg='lazygit'
 
