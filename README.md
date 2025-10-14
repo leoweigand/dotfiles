@@ -34,3 +34,8 @@ You'll be prompted for:
 ## License
 
 MIT
+
+## Ideas
+
+- Set up Caps Lock → Escape mapping with Karabiner-Elements
+- Set up tiling window manager (yabai)
