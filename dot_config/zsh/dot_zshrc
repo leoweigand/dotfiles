@@ -1,0 +1,7 @@
+# Load zsh configuration modules
+source "$ZDOTDIR/env.zsh"
+source "$ZDOTDIR/tools.zsh"
+source "$ZDOTDIR/aliases.zsh"
+
+# Load local overrides (NOT managed by chezmoi - for experimentation)
+[ -f "$ZDOTDIR/local.zsh" ] && source "$ZDOTDIR/local.zsh"

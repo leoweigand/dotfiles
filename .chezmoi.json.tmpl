@@ -1,7 +1,7 @@
 {
   "data": {
     "name": "Leo Weigand",
-    "email": {{ promptString "What is your email" | quote }},
     "profile": {{ promptChoice "Machine profile" (list "personal" "work") | quote }}
+    "email": {{ promptString "Which email should be used on this machine?" | quote }},
   }
 }

@@ -33,3 +33,6 @@
 .nvm/**
 .pyenv/**
 .local/**
+
+# Local zsh overrides (experimentation, not version controlled)
+.config/zsh/local.zsh
