@@ -1,5 +1,0 @@
-abbr vi  "nvim"
-abbr vim "nvim"
-abbr lg  "lazygit"
-abbr bm  "bookmark"
-abbr cat "bat"
