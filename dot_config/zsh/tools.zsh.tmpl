@@ -5,3 +5,7 @@
 
 # Initialize zoxide
 eval "$(zoxide init --cmd z zsh)"
+
+# Pre-populate zoxide with common directories
+zoxide add "{{ .chezmoi.sourceDir }}"  # z dot
+zoxide add "{{ .chezmoi.homeDir }}/.config"  # z conf
