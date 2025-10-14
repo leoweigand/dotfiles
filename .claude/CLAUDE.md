@@ -2,6 +2,9 @@
 
 When working on dotfiles tasks:
 
+## General principles
+- Install tools/apps in all profiles unless explicitly specified otherwise (e.g., "personal only", "work only")
+
 ## Simple tasks
 1. Make the edits
 2. Commit with descriptive message
