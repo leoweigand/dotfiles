@@ -3,17 +3,17 @@
 
 set -eufo pipefail
 
-echo "📦 Installing Homebrew packages..."
+echo "Installing Homebrew packages..."
 
 # Install Homebrew if not installed
 if ! command -v brew &> /dev/null; then
-    echo "🍺 Installing Homebrew..."
+    echo "Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    echo "✅ Homebrew installed"
+    echo "Homebrew installed"
 fi
 
 # Install packages from Brewfile (includes profile-specific packages)
-echo "📋 Installing packages from Brewfile..."
+echo "Installing packages from Brewfile..."
 brew bundle --file="{{ .chezmoi.homeDir }}/Brewfile"
 
-echo "✅ Package installation complete"
+echo "Package installation complete"
