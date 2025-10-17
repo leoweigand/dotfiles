@@ -23,7 +23,6 @@
 # Application-specific (managed by apps themselves)
 .config/raycast/**
 .config/simple-update-notifier/**
-.config/tmux/**
 
 # LM Studio
 .lmstudio-home-pointer
