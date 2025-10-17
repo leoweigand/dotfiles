@@ -17,3 +17,7 @@ eval "$(zoxide init --cmd z zsh)"
 # Pre-populate zoxide with common directories
 zoxide add "{{ .chezmoi.sourceDir }}"  # z dot
 zoxide add "{{ .chezmoi.homeDir }}/.config"  # z conf
+
+# fzf shell integration (keybindings and completion)
+[ -f /opt/homebrew/opt/fzf/shell/key-bindings.zsh ] && source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+[ -f /opt/homebrew/opt/fzf/shell/completion.zsh ] && source /opt/homebrew/opt/fzf/shell/completion.zsh
