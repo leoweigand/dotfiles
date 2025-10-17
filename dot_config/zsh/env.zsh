@@ -1,5 +1,8 @@
 # Environment variables and PATH modifications
 
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 
