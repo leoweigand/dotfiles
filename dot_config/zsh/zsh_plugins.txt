@@ -1,0 +1,12 @@
+# Zsh plugins managed by antidote
+# See: https://antidote.sh
+
+# Completions
+zsh-users/zsh-completions kind:fpath
+
+# Fish-like features
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting kind:defer
+
+# fzf integration
+junegunn/fzf path:shell kind:fpath

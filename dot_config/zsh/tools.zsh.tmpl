@@ -1,5 +1,9 @@
 # Tool initializations
 
+# Initialize antidote plugin manager
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+antidote load ${ZDOTDIR}/zsh_plugins.txt
+
 # Initialize starship prompt
 eval "$(starship init zsh)"
 

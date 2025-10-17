@@ -1,5 +1,6 @@
 # Load zsh configuration modules
 source "$ZDOTDIR/env.zsh"
+source "$ZDOTDIR/completions.zsh"
 source "$ZDOTDIR/tools.zsh"
 source "$ZDOTDIR/functions.zsh"
 source "$ZDOTDIR/aliases.zsh"
