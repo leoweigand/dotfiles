@@ -1,5 +1,11 @@
 # Ignore sensitive and local-only files
 
+# Repository metadata (not actual dotfiles)
+README.md
+LICENSE
+.setup.sh
+Brewfile.tmpl
+
 # 1Password
 .config/1Password/**
 .config/op/**
