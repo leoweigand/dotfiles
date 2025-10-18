@@ -4,7 +4,6 @@
 README.md
 LICENSE
 .setup.sh
-Brewfile.tmpl
 
 # 1Password
 .config/1Password/**
