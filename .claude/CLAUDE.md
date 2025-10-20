@@ -3,16 +3,19 @@
 When working on dotfiles tasks:
 
 ## General principles
-- Install tools/apps in all profiles unless explicitly specified otherwise (e.g., "personal only", "work only")
+
+- Install tools/apps in all profiles unless explicitly specified otherwise (e.g. "personal only", "work only")
 
 ## Simple tasks
+
 1. Make the edits
-2. Commit with descriptive message
+2. Commit with descriptive message (but no semantic commits).
 3. Run `chezmoi apply`
-4. If zsh config was modified, run `source ~/.zshrc`
+4. If zsh config was modified, run `source ~/.config/zsh/.zshrc`
 5. DON'T push (user handles this)
 
 ## Non-trivial or ambiguous tasks
+
 1. Suggest a plan first
 2. Confirm configuration details with user
 3. Then proceed as above
