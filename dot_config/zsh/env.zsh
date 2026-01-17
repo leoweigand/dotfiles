@@ -8,3 +8,6 @@ export PATH="$PATH:/Users/leo/.lmstudio/bin"
 
 # pipx
 export PATH="$PATH:/Users/leo/.local/bin"
+
+# opencode
+export PATH="$PATH:/Users/leo/.opencode/bin"
